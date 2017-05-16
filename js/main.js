@@ -8,41 +8,41 @@
 // Refer to the `index.html` file for the validation rules that must be enforced.
 $(document).on("ready", function() {
 
-    $("#order-form").validate({
+    $("#order-form").validate({ //This is validating that the order-form class is being submitted
       submitHandler: function(form) {
         form.submit();
       },
 
-      rules: {
-        "your-name": {
-          required: true,
-          maxlength: 128,
-          lettersonly: true
+      rules: { //This is an object set that defines the rules of how the above form is allowed to be submitted
+        "your-name": { //This object is strictly for the your-name class
+          required: true, //This requirement is that it has to be filled
+          maxlength: 128, //This is stating how long the field can/needs to be
+          lettersonly: true //This is not working with the current version, but it is suppose to require that only letters can be submitted in this field
         },
-        "your-state": {
-          required: true,
-          maxlength: 2
+        "your-state": { //This is for the your-state class
+          required: true, //This requirement is that it has to be filled
+          maxlength: 2 //This is stating how long the field can/needs to be
         },
         "your-zip": {
-          required: true,
-          maxlength: 5,
-          digits: true
+          required: true, //This requirement is that it has to be filled
+          maxlength: 5, //This is stating how long the field can/needs to be
+          digits: true //This is forcing digits only to be entered
         },
         "card-holder-name": {
-          required: true,
-          maxlength: 128
+          required: true, //This requirement is that it has to be filled
+          maxlength: 128 //This is stating how long the field can/needs to be
         },
         "card-number": {
-          required: true,
-          creditcard: true
+          required: true, //This requirement is that it has to be filled
+          creditcard: true //This defines that the set of numbers entered has to fit a creditcard length number
         },
         "cvv": {
-          required: true,
-          maxlength: 3,
-          digits: true
+          required: true, //This requirement is that it has to be filled
+          maxlength: 3, //This is stating how long the field can/needs to be
+          digits: true //This is forcing digits only to be entered
         },
 
       }
     });
-    $("label span.glyphicon").tooltip();
+    $("label span.glyphicon").tooltip(); //This is what creates the drop down tooltip explaining what each section does.
 });
